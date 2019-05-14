@@ -4,9 +4,7 @@ import com.yangbin1.product_service.domain.Product;
 import com.yangbin1.product_service.service.ProductService;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -30,11 +28,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> listProduct() {
-        return null;
+        Collection<Product> collection = daoMap.values();
+        List<Product> list = new ArrayList<>(collection);
+        return list;
     }
 
     @Override
     public Product findById(int id) {
-        return null;
+        return daoMap.get(id);
     }
 }
