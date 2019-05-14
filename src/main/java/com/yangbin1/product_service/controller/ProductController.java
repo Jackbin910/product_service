@@ -14,12 +14,12 @@ public class ProductController {
     private ProductService productService;
 
     @RequestMapping("list")
-    public Object list(){
+    public Object list() {
         return productService.listProduct();
     }
 
     @RequestMapping("find")
-    public Object findById(@RequestParam("id") int id){
+    public Object findById(@RequestParam("id") int id) {
         return productService.findById(id);
     }
 }
